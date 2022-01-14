@@ -6,6 +6,8 @@ window.addEventListener("load", () => {
   let feelsLike = document.querySelector(".weather__feels");
   let city = document.querySelector(".location__city");
   let country = document.querySelector(".location__country");
+  let icon = document.querySelector(".icon");
+  let tempStatus;
 
   async function getLocation() {
     const response = await fetch("https://geolocation-db.com/json/");
@@ -26,17 +28,36 @@ window.addEventListener("load", () => {
     const weatherData = await getWeather(location);
 
     if (temperature) {
-      console.log(weatherData, "hi");
       const { temp_c, condition, feelslike_c } = weatherData.current;
       temperature.textContent = temp_c;
       description.textContent = condition.text;
       feelsLike.textContent = `Feels like ${feelslike_c} °C`;
       city.textContent = weatherData.location.name;
       country.textContent = weatherData.location.country;
+      tempStatus = feelslike_c;
     } else {
       temperature.textContent("Temporarily unavailable");
     }
   }
 
-  getData();
+  function setIcon() {
+    console.log("start");
+    console.log("tempStatus", tempStatus);
+
+    if (tempStatus) {
+      if (tempStatus < 7) {
+        icon.textContent = "Beanie";
+      } else if (tempStatus >= 7 && tempStatus < 15) {
+        icon.textContent = "Jacket";
+      } else if (tempStatus >= 15 && tempStatus < 24) {
+        icon.textContent = "Pullover";
+      } else if (tempStatus >= 24) {
+        icon.textContent = "Shirt";
+      }
+    } else {
+      icon.textContent(":-(");
+    }
+  }
+
+  getData().then(setIcon);
 });
