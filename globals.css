@@ -68,6 +68,12 @@ main {
   height: 11rem;
 }
 
+.weather__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 1.25rem;
+}
+
 .information {
   position: absolute;
   margin-right: 1rem;
@@ -77,16 +83,12 @@ main {
   gap: 1rem;
 }
 
-.weather__details {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
 .clothing {
   display: grid;
   grid-template-columns: 80% 20%;
   border-top: 0.5px solid rgb(47 61 86 / 30%);
   padding-top: 0.5rem;
+  line-height: 1.25rem;
 }
 
 .clothing__text {
@@ -94,7 +96,7 @@ main {
 }
 
 .clothing__icon {
-  max-height: 2.5rem;
+  max-height: 3.6rem;
 }
 
 .location {

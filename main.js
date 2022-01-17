@@ -59,11 +59,10 @@ window.addEventListener("load", () => {
     function setDescription() {
       if (tempStatus) {
         if (tempStatus < 7) {
-          console.log("wea", weatherData);
           icon.src = "/lib/04_Scarf.svg";
           text.textContent = `You should put on very warm clothes. ${
             weatherData.forecast.forecastday[0].day.daily_will_it_rain
-              ? "Don't forget your umbrella"
+              ? "Don't forget your umbrella."
               : ""
           }`;
         } else if (tempStatus >= 7 && tempStatus < 15) {
