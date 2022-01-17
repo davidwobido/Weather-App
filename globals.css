@@ -1,3 +1,6 @@
+/* Import Poppins & Rubik */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rubik:wght@600&display=swap");
+
 *,
 *::after,
 *::before {
@@ -7,10 +10,15 @@
 
 :root {
   /* COLORS */
-  --color-primary: #fff;
-  --color-background: #000;
+  --color-primary: rgb(47 61 86);
+  --color-background: #f5f16e;
+  --color-accent: #1eb3e2;
+}
 
-  /* FONT */
+h1 {
+  font-family: Rubik, sans-serif;
+  font-size: 12rem;
+  color: var(--color-accent);
 }
 
 h1,
@@ -23,8 +31,70 @@ a {
   margin: 0;
 }
 
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+h3 {
+  font-size: 0.7rem;
+}
+
 body {
   margin: 0;
+  font-family: Poppins, sans-serif;
+  color: var(--color-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+}
+
+.logo {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+main {
+  margin-top: 8rem;
+  padding: 1rem;
+  gap: 10rem;
+}
+
+.weather__temperature {
+  transform: translateY(-1.75rem);
+  height: 11rem;
+}
+
+.information {
+  position: absolute;
+  margin-right: 1rem;
+  bottom: 1rem;
+  width: calc(100% - 2rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.clothing {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  border-top: 0.5px solid rgb(47 61 86 / 30%);
+  padding-top: 0.5rem;
+}
+
+.clothing__text {
+  font-weight: 500;
+}
+
+.clothing__icon {
+  max-height: 2.5rem;
+}
+
+.location {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 0.5px solid rgb(47 61 86 / 30%);
+  padding-top: 0.5rem;
 }

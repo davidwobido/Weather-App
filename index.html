@@ -7,19 +7,30 @@
     <title>Wearther</title>
   </head>
   <body>
-    <section class="location">
-      <h1 class="location__city">Loading ...</h1>
-      <h1 class="location__country">Loading ...</h1>
-    </section>
-    <section>
-      <p class="icon">:-)</p>
-    </section>
-    <section class="weather">
-      <h2 class="weather__temperature">Loading ...</h2>
-      <span>°C</span>
-      <p class="weather__description">Loading ...</p>
-      <p class="weather__feels">Loading ...</p>
-    </section>
-    <script type="module" src="/main.js"></script>
+    <header class="logo">
+      <img src="/lib/WEARTHER_Logo.svg" />
+    </header>
+    <main>
+      <section class="weather">
+        <h2 class="weather__description">Loading ...</h2>
+        <h1 class="weather__temperature">Loading ...</h1>
+        <p class="weather__feels">Loading ...</p>
+      </section>
+      <div class="information">
+        <section class="clothing">
+          <span class="clothing__text">Loading ...</span>
+          <img class="clothing__icon" src="/lib/02_Sweater.svg" />
+        </section>
+        <section class="location">
+          <h3>Country</h3>
+          <h3>City</h3>
+          <h3>Date</h3>
+          <p class="location__country">Loading ...</p>
+          <p class="location__city">Loading ...</p>
+          <p class="location__date">Loading ...</p>
+        </section>
+      </div>
+      <script type="module" src="/main.js"></script>
+    </main>
   </body>
 </html>
