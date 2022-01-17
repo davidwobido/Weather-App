@@ -6,7 +6,9 @@ window.addEventListener("load", () => {
   let feelsLike = document.querySelector(".weather__feels");
   let city = document.querySelector(".location__city");
   let country = document.querySelector(".location__country");
+  let date = document.querySelector(".location__date");
   let icon = document.querySelector(".clothing__icon");
+  let text = document.querySelector(".clothing__text");
   let tempStatus;
 
   async function getLocation() {
@@ -17,13 +19,13 @@ window.addEventListener("load", () => {
 
   async function getWeather(location) {
     const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=c3a589ab814f42b1af174406221401&q=${location}&aqi=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=c3a589ab814f42b1af174406221401&q=${location}&days=4&aqi=no&alerts=no`
     );
     const data = await response.json();
     return data;
   }
 
-  async function getData() {
+  async function setData() {
     const location = await getLocation();
     const weatherData = await getWeather(location);
 
@@ -31,33 +33,53 @@ window.addEventListener("load", () => {
       const { temp_c, condition, feelslike_c } = weatherData.current;
       temperature.textContent = `${temp_c}°`;
       description.textContent = condition.text;
-      feelsLike.textContent = `Feels like ${feelslike_c} °C`;
+      feelsLike.textContent = `${feelslike_c} °C`;
       city.textContent = weatherData.location.name;
       country.textContent = weatherData.location.country;
       tempStatus = feelslike_c;
+      date.textContent = weatherData.forecast.forecastday[0].date;
     } else {
       temperature.textContent("Temporarily unavailable");
     }
-  }
 
-  function setIcon() {
-    console.log("start");
-    console.log("tempStatus", tempStatus);
-
-    if (tempStatus) {
-      if (tempStatus < 7) {
-        icon.src = "/lib/04_Scarf.svg";
-      } else if (tempStatus >= 7 && tempStatus < 15) {
-        icon.src = "/lib/03_Jacket.svg";
-      } else if (tempStatus >= 15 && tempStatus < 24) {
-        icon.src = "/lib/02_Weater.svg";
-      } else if (tempStatus >= 24) {
-        icon.src = "/lib/01_Shirt.svg";
+    function setDescription() {
+      if (tempStatus) {
+        if (tempStatus < 7) {
+          console.log("wea", weatherData);
+          icon.src = "/lib/04_Scarf.svg";
+          text.textContent = `You should put on very warm clothes. ${
+            weatherData.forecast.forecastday[0].day.daily_will_it_rain
+              ? "Don't forget your umbrella"
+              : ""
+          }`;
+        } else if (tempStatus >= 7 && tempStatus < 15) {
+          icon.src = "/lib/03_Jacket.svg";
+          text.textContent = `You don't need a scarf today, I think. ${
+            weatherData.forecast.forecastday[0].day.daily_will_it_rain
+              ? "Don't forget your umbrella"
+              : ""
+          }`;
+        } else if (tempStatus >= 15 && tempStatus < 24) {
+          icon.src = "/lib/02_Sweater.svg";
+          text.textContent = `A Sweater would be the best choice today. ${
+            weatherData.forecast.forecastday[0].day.daily_will_it_rain
+              ? "Don't forget your umbrella"
+              : ""
+          }`;
+        } else if (tempStatus >= 24) {
+          icon.src = "/lib/01_Shirt.svg";
+          text.textContent = `Best to wear today: A T-Shirt. ${
+            weatherData.forecast.forecastday[0].day.daily_will_it_rain
+              ? "Don't forget your umbrella"
+              : ""
+          }`;
+        }
+      } else {
+        icon.textContent(":-(");
       }
-    } else {
-      icon.textContent(":-(");
     }
+    setDescription();
   }
 
-  getData().then(setIcon);
+  setData();
 });
