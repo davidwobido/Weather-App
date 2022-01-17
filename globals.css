@@ -77,6 +77,11 @@ main {
   gap: 1rem;
 }
 
+.weather__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .clothing {
   display: grid;
   grid-template-columns: 80% 20%;
