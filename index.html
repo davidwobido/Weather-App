@@ -7,29 +7,29 @@
     <title>Wearther</title>
   </head>
   <body>
-    <section class="location">
-      <h1 class="location__city">Loading ...</h1>
-      <h1 class="location__country">Loading ...</h1>
-    </section>
-    <section>
-      <p class="icon">:-)</p>
-    </section>
-    <section class="weather">
-      <h2 class="weather__temperature">Loading ...</h2>
-      <span>°C</span>
-      <p class="weather__description">Loading ...</p>
-      <p class="weather__feels">Loading ...</p>
-    </section>
-    <section class="forecast">
-      <div class="placeholder">Details</div>
-      <div class="week">
-        <h4 class="day">Day 1</h4>
-        <h4 class="day">Day 2</h4>
-        <h4 class="day">Day 3</h4>
-        <h4 class="day">Day 4</h4>
-        <h4 class="day">Day 5</h4>
-      </div>
-    </section>
-    <script type="module" src="/main.js"></script>
+    <header class="logo">
+      <img src="/lib/WEARTHER_Logo.svg" />
+    </header>
+    <main>
+      <section class="weather">
+        <p class="weather__description">Loading ...</p>
+        <h1 class="weather__temperature">Loading ...</h1>
+        <span>°C</span>
+        <p class="weather__feels">Loading ...</p>
+      </section>
+      <section class="clothing">
+        <span class="clothing__text">Loading ...</span>
+        <img class="clothin__icon" />
+      </section>
+      <section class="location">
+        <h2 class="location__headline">Country</h2>
+        <p class="location__country">Loading ...</p>
+        <h2 class="location__headline">City</h2>
+        <p class="location__city">Loading ...</p>
+        <h2 class="location__headline">Date</h2>
+        <p class="location__date">Loading ...</p>
+      </section>
+      <script type="module" src="/main.js"></script>
+    </main>
   </body>
 </html>
