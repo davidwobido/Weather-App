@@ -2,7 +2,7 @@
 A Weather-App that suggests what to wear. <br>
 Using https://github.com/davidwobido/VanillaJS-Template
 
-Built it to refresh my vanilla.js skills again.
+Built to work with vanilla.js again.
 
 ### APIs:
 📍 https://geolocation-db.com <br>
@@ -10,6 +10,15 @@ Built it to refresh my vanilla.js skills again.
 
 ### Icons:
 https://iconscout.com/icon-pack/free-clothing-line-stroke-icons
+
+### Ideas for possible extensions:
+• More detailed suggestions <br>
+• Include also e.g. wind to the suggestions <br>
+• Different color, depending on the weather oder at least a: <br>
+• Dark Mode <br>
+• Forecast <br>
+• Search function for different locations <br>
+• Possibility to save locations in a DB
 
 
 
