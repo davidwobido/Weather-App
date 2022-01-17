@@ -7,9 +7,9 @@ window.addEventListener("load", () => {
   let tempAverage = document.querySelector(".weather_average");
   let tempMax = document.querySelector(".weather__max");
   let tempMin = document.querySelector(".weather__min");
-  let city = document.querySelector(".location__city");
-  let country = document.querySelector(".location__country");
-  let date = document.querySelector(".location__date");
+  let city = document.querySelector(".additional__city");
+  let country = document.querySelector(".additional__country");
+  let date = document.querySelector(".additional__date");
   let icon = document.querySelector(".clothing__icon");
   let text = document.querySelector(".clothing__text");
   let tempStatus;
