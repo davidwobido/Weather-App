@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
 
     if (temperature) {
       const { temp_c, condition, feelslike_c } = weatherData.current;
-      temperature.textContent = temp_c;
+      temperature.textContent = `${temp_c}°`;
       description.textContent = condition.text;
       feelsLike.textContent = `Feels like ${feelslike_c} °C`;
       city.textContent = weatherData.location.name;
