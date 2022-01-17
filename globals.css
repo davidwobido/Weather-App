@@ -88,6 +88,10 @@ main {
   font-weight: 500;
 }
 
+.clothing__icon {
+  max-height: 2.5rem;
+}
+
 .location {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

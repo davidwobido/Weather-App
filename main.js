@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
   let feelsLike = document.querySelector(".weather__feels");
   let city = document.querySelector(".location__city");
   let country = document.querySelector(".location__country");
-  let icon = document.querySelector(".icon");
+  let icon = document.querySelector(".clothing__icon");
   let tempStatus;
 
   async function getLocation() {
@@ -46,13 +46,13 @@ window.addEventListener("load", () => {
 
     if (tempStatus) {
       if (tempStatus < 7) {
-        icon.textContent = "Beanie";
+        icon.src = "/lib/04_Scarf.svg";
       } else if (tempStatus >= 7 && tempStatus < 15) {
-        icon.textContent = "Jacket";
+        icon.src = "/lib/03_Jacket.svg";
       } else if (tempStatus >= 15 && tempStatus < 24) {
-        icon.textContent = "Pullover";
+        icon.src = "/lib/02_Weater.svg";
       } else if (tempStatus >= 24) {
-        icon.textContent = "Shirt";
+        icon.src = "/lib/01_Shirt.svg";
       }
     } else {
       icon.textContent(":-(");
