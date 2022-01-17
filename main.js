@@ -4,6 +4,9 @@ window.addEventListener("load", () => {
   let temperature = document.querySelector(".weather__temperature");
   let description = document.querySelector(".weather__description");
   let feelsLike = document.querySelector(".weather__feels");
+  let tempAverage = document.querySelector(".weather_average");
+  let tempMax = document.querySelector(".weather__max");
+  let tempMin = document.querySelector(".weather__min");
   let city = document.querySelector(".location__city");
   let country = document.querySelector(".location__country");
   let date = document.querySelector(".location__date");
@@ -41,6 +44,17 @@ window.addEventListener("load", () => {
     } else {
       temperature.textContent("Temporarily unavailable");
     }
+
+    function setMinMax() {
+      if (temperature) {
+        const { maxtemp_c, mintemp_c, avgtemp_c } =
+          weatherData.forecast.forecastday[0].day;
+        tempAverage.textContent = `${avgtemp_c} °C`;
+        tempMax.textContent = `${maxtemp_c} °C`;
+        tempMin.textContent = `${mintemp_c} °C`;
+      }
+    }
+    setMinMax();
 
     function setDescription() {
       if (tempStatus) {
