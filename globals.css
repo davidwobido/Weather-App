@@ -1,3 +1,6 @@
+/* Import Poppins & Rubik */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rubik:wght@600&display=swap");
+
 *,
 *::after,
 *::before {
@@ -7,13 +10,15 @@
 
 :root {
   /* COLORS */
-  --color-primary: #fff;
-  --color-background: #000;
-
-  /* FONT */
+  --color-primary: #2f3d56;
+  --color-background: #f5f16e;
+  --color-accent: #1eb3e2;
 }
 
-h1,
+h1 {
+  font-family: Rubik, sans-serif;
+}
+
 h2,
 h3,
 h4,
@@ -21,6 +26,7 @@ h5,
 h6 p,
 a {
   margin: 0;
+  font-family: Poppins, sans-serif;
 }
 
 body {
