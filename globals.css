@@ -96,7 +96,7 @@ main {
 }
 
 .clothing__icon {
-  max-height: 3.6rem;
+  height: 3.6rem;
 }
 
 .additional {
@@ -125,6 +125,6 @@ main {
   }
 
   .clothing__icon {
-    max-height: max-content;
+    height: 100%;
   }
 }
