@@ -17,7 +17,6 @@
 
 h1 {
   font-family: Rubik, sans-serif;
-  font-size: 12rem;
   color: var(--color-accent);
 }
 
@@ -29,13 +28,6 @@ h5,
 h6 p,
 a {
   margin: 0;
-}
-
-h2 {
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
 }
 
 h3 {
@@ -51,19 +43,27 @@ body {
   background-color: var(--color-background);
 }
 
-.logo {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-}
-
 main {
   margin-top: 8rem;
   padding: 1rem;
   gap: 10rem;
 }
 
+.logo {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+.weather__description {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
 .weather__temperature {
+  font-size: 12rem;
   transform: translateY(-1.75rem);
   height: 11rem;
 }
@@ -88,15 +88,15 @@ main {
   grid-template-columns: 80% 20%;
   border-top: 0.5px solid rgb(47 61 86 / 30%);
   padding-top: 0.5rem;
-  line-height: 1.25rem;
 }
 
 .clothing__text {
   font-weight: 500;
+  line-height: 1.25rem;
 }
 
 .clothing__icon {
-  max-height: 3.6rem;
+  height: 3.6rem;
 }
 
 .additional {
@@ -104,4 +104,39 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
   border-top: 0.5px solid rgb(47 61 86 / 30%);
   padding-top: 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .logo {
+    top: 1.5rem;
+    right: 4rem;
+    transform: scale(1.5);
+  }
+
+  .weather__temperature {
+    font-size: 16rem;
+    transform: translateY(-2.5rem);
+    height: 15rem;
+  }
+
+  .weather__details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 1.25rem;
+    width: 400px;
+  }
+
+  .clothing {
+    grid-template-columns: 60% 40%;
+  }
+
+  .clothing__text {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+  }
+
+  .clothing__icon {
+    height: 100%;
+  }
 }
