@@ -13,6 +13,7 @@
   --color-primary: rgb(47 61 86);
   --color-background: #f5f16e;
   --color-accent: #1eb3e2;
+  --color-background-grade: #e1dd65;
 }
 
 h1 {
@@ -44,7 +45,7 @@ body {
 }
 
 main {
-  margin-top: 8rem;
+  margin-top: 7rem;
   padding: 1rem;
   gap: 10rem;
 }
@@ -56,16 +57,17 @@ main {
 }
 
 .weather__description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
 
 .weather__temperature {
-  font-size: 12rem;
-  transform: translateY(-1.75rem);
-  height: 11rem;
+  font-size: 10rem;
+  transform: translateY(-1.5rem);
+  height: 9rem;
+  letter-spacing: -0.2rem;
 }
 
 .weather__details {
@@ -104,6 +106,40 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
   border-top: 0.5px solid rgb(47 61 86 / 30%);
   padding-top: 0.5rem;
+}
+
+.search {
+  border-top: 0.5px solid rgb(47 61 86 / 30%);
+  padding-top: 0.5rem;
+}
+
+.searchform {
+  margin-top: 0.2rem;
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+
+.searchform input {
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 0.2rem;
+  background-color: var(--color-background-grade);
+}
+
+.searchform input::placeholder {
+  opacity: 0.5;
+}
+
+.searchform button {
+  all: unset;
+  position: absolute;
+  right: 0.4rem;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
+  border-radius: 0.2rem;
+  background-color: var(--color-background);
+  color: var(--color-primary);
 }
 
 @media screen and (min-width: 600px) {
