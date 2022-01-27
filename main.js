@@ -12,18 +12,19 @@ window.addEventListener("load", () => {
   let date = document.querySelector(".additional__date");
   let icon = document.querySelector(".clothing__icon");
   let text = document.querySelector(".clothing__text");
-  let tempStatus;
   let searchInput = document.querySelector(".searchform__input");
   let searchForm = document.querySelector(".searchform");
+  let tempStatus;
+  let location;
 
   async function getLocation() {
     const response = await fetch("https://geolocation-db.com/json/");
     const data = await response.json();
     return data.city;
   }
+
   function search(event) {
     event.preventDefault();
-    console.log(searchInput.value);
   }
 
   searchForm.addEventListener("submit", search);
@@ -37,7 +38,12 @@ window.addEventListener("load", () => {
   }
 
   async function setData() {
-    const location = await getLocation();
+    if (!searchInput.value) {
+      location = await getLocation();
+    } else {
+      location = searchInput.value;
+    }
+
     const weatherData = await getWeather(location);
 
     if (temperature) {
@@ -103,4 +109,5 @@ window.addEventListener("load", () => {
   }
 
   setData();
+  searchForm.addEventListener("submit", setData);
 });
