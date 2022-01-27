@@ -13,12 +13,20 @@ window.addEventListener("load", () => {
   let icon = document.querySelector(".clothing__icon");
   let text = document.querySelector(".clothing__text");
   let tempStatus;
+  let searchInput = document.querySelector(".searchform__input");
+  let searchForm = document.querySelector(".searchform");
 
   async function getLocation() {
     const response = await fetch("https://geolocation-db.com/json/");
     const data = await response.json();
     return data.city;
   }
+  function search(event) {
+    event.preventDefault();
+    console.log(searchInput.value);
+  }
+
+  searchForm.addEventListener("submit", search);
 
   async function getWeather(location) {
     const response = await fetch(
