@@ -21,7 +21,7 @@ https://iconscout.com/icon-pack/free-clothing-line-stroke-icons
 • Different color, depending on the weather oder at least a: <br>
 • Dark Mode <br>
 • Forecast <br>
-• Possibility to save locations in a DB
+• Possibility to save locations in a DB <br>
 • <s>Search function for different locations</s> <br>
 
 ![image](https://user-images.githubusercontent.com/91462450/151336730-d42b1d13-3a29-43e8-8f25-633a0b2b2259.png)
